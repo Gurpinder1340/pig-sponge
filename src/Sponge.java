@@ -33,7 +33,42 @@ public class Sponge {
 
   // Implement your solution here!
   public static String spongeCase(String sentence) {
-    return null;
+      // split sentence into seperate words
+      String[] words = sentence.split(" ");
+
+      // store result
+      String result = "";
+
+      // loop through each word in the sentence
+      for (String word : words) {
+        result += spongeSingleWord(word);
+        result += "  ";
+      }
+      result = result.substring(0, result.length() - 1);
+
+      return result;
+    }
+
+    private static String spongeSingleWord(String word) {
+    String newWord = "";
+
+ 
+      boolean lower = true;
+
+ 
+      for (char c : word.toCharArray()) {
+
+      if (lower) {
+        newWord += Character.toLowerCase(c);
+      } else {
+        newWord += Character.toUpperCase(c);
+
+      }
+
+      lower = !lower;
+      }
+    
+      return newWord; 
   }
 
 

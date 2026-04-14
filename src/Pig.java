@@ -26,7 +26,27 @@ public class Pig {
 
     // Implement your solution here!
     public static String pigLatin(String sentence) {
-        return null;
+         // split the sentence into words
+        String[] words = sentence.split (" ");
+        
+        // set up a loop for each word
+        for (int i = 0; i < words.length; i++) {
+            String word = words [i];
+
+            // If the wordd starts with these vowels leave it alone
+        if (word.charAt(0) == 'a' || word.charAt(0) == 'e' || word.charAt(0) == 'i'
+        || word.charAt(0) == 'o' || word.charAt(0) == 'u') {
+
+            
+        } else {
+            char firstLetter = word.charAt(0); // gets the first letter
+            words [i] = word.substring(1) + firstLetter + "ay"; //removes the first letter and adds "ay" to the end
+        }
+
+        }
+
+
+         return String.join(" ", words);
     }
 
 
